@@ -1,1 +1,1 @@
-# EcommerceSit Made With React
+# EcommerceSite Made With React
