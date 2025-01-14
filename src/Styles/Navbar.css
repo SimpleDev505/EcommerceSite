@@ -1,0 +1,33 @@
+.navbar {
+    background-color: rgba(0, 0, 0, .9);
+    padding-left: 1em;
+    padding-right: 1em;
+    float: right;
+    border-radius: 5em;
+}
+
+.navbar-links * {
+    display: inline-flex;
+    margin: .5em;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+    font-weight: 550;
+    padding: 0 .4em;
+    border-radius: 3em;
+}
+
+.navbar-linkitem:hover {
+    background-color: white;
+    color: black;
+}
+
+.navbar-linkitem:nth-child(1):hover {
+    background-color: white;
+    color: black;
+}
+
+.navbar-linkitem:nth-child(1) {
+    background-color: rgb(81, 132, 241);
+    color: white;
+}
