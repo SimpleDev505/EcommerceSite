@@ -1,12 +1,14 @@
-import Listgroup from "./Components/ListGroup";
 function App() {
-  const items = ["first", "second", "third", "first", "second", "third"];
-
-  return (
-    <div>
-      <Listgroup items={items} heading="Title"></Listgroup>
-    </div>
-  );
+  return <div>
+    
+  </div>;
 }
 
 export default App;
+
+/* <div>
+  <Listgroup items={items} heading="Title"></Listgroup>
+  <Alert>
+    <p>alert</p>
+  </Alert>
+</div>; */
