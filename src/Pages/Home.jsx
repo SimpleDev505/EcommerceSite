@@ -1,7 +1,7 @@
 import List from "../Components/List";
-
+import "../Styles/Home.css";
 function Home() {
-  return <></>;
+  return <>{/* <img className="home-display"></img> */}</>;
 }
 
 export default Home;

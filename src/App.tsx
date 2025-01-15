@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router";
 
 function App() {
   return (
-    <main>
+    <main className="main-content">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />

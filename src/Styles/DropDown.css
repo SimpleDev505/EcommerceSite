@@ -1,0 +1,35 @@
+.dropdown-button {
+    box-sizing: border-box;
+    height: 100%;
+    min-width: 45px;
+    background-color: white;
+    color: #999999;
+    ;
+    border: 1px solid #adadad;
+    ;
+    border-radius: 1px;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    border-top-left-radius: .3em;
+    border-bottom-left-radius: .3em;
+}
+
+.dropdown-heading {
+    margin-left: 5px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.dropdown-icon {
+    background: url('../Images/expand_icon.png') no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    margin-left: .2em;
+    margin-right: .2em;
+
+}
