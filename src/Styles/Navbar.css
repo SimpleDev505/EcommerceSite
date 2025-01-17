@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: var(--default-fontfamily);
 }
 
 .navbar {
@@ -31,6 +32,14 @@
 
 .navbar-linkitem {
     margin-right: 1em;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.navbar-linkitem:hover {
+    border: 1px solid white;
 }
 
 /* .navbar-linkitem {
@@ -55,6 +64,10 @@
 .navbar-cart {
     display: flex;
     align-items: center;
+    height: 2em;
+    width: 4em;
+    justify-content: center;
+
 }
 
 .navbar-cart img {

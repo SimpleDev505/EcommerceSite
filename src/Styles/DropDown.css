@@ -5,6 +5,7 @@
 
     --dropdown-heading-hover: grey;
     --dropdown-heading-default: rgb(189, 189, 189);
+
 }
 
 .dropdown-container {
@@ -16,7 +17,7 @@
 .dropdown-toggle {
     padding: 10px 20px;
     background-color: var(--dropdown-heading-default);
-    color: white;
+    color: rgb(91, 91, 91);
     border: none;
     height: 100%;
     border-top-left-radius: .3em;
