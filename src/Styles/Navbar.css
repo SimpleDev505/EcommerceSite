@@ -8,7 +8,7 @@
 }
 
 .navbar-links {
-    display: inline-flex;
+    display: flex;
     width: 98%;
     height: 100%;
     margin: auto;
@@ -63,10 +63,20 @@
 }
 
 .navbar-cart-img {
-    background: url('../src/Images/cart_icon.png');
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: url('../src/Images/cart_icon.png') no-repeat;
+    background-size: contain;
+}
+
+.navbar-cart-info {
+    display: flex;
+    justify-content: center;
 }
 
 #cart-amount {
+    position: absolute;
     font-weight: bolder;
     font-size: 1.3em;
     color: orange;

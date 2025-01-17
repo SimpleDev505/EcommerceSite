@@ -34,7 +34,15 @@ function Navbar() {
                 <span className="navbar-cart-img"></span>
                 <span id="cart-amount">0</span>
               </div>
-              <span style={{ fontWeight: "bold", margin: "5px" }}>Cart</span>
+              <span
+                style={{
+                  fontWeight: "bold",
+                  margin: "auto",
+                  marginRight: "5px",
+                }}
+              >
+                Cart
+              </span>
             </div>
           </Link>
         </div>

@@ -37,6 +37,7 @@ function Searchbar() {
             autoFocus
             onFocus={setborderonfocus}
             onBlur={setborderonloosefocus}
+            style={{ border: "none" }}
           ></input>
           <button
             className={
