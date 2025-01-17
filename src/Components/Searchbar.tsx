@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../Styles/Searchbar.css";
 import DropDown from "./DropDown";
+import { searchbarMenuItems } from "../Pages/Menus/SearchbarMenu";
 
 function Searchbar() {
   const [isfocused, Setisfocused] = useState(false);
@@ -29,7 +30,7 @@ function Searchbar() {
               : "searchbar-container"
           }
         >
-          <DropDown heading="All"></DropDown>
+          <DropDown heading="All" items={searchbarMenuItems}></DropDown>
           <input
             type="text"
             placeholder="Search.."

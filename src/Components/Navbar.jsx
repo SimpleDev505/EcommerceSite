@@ -16,21 +16,24 @@ function Navbar() {
           <Searchbar></Searchbar>
           <Link to="/" className="navbar-linkitem">
             <>
-              <h style={{ fontSize: ".8em" }}>SignIn&</h>
+              <span style={{ fontSize: ".8em" }}>SignIn&</span>
               <br />
-              <p style={{ fontWeight: "bold" }}>Accounts</p>
+              <span style={{ fontWeight: "bold" }}>Accounts</span>
             </>
           </Link>
           <Link to="/" className="navbar-linkitem">
             <>
-              <h style={{ fontSize: ".8em" }}>Returns&</h>
+              <span style={{ fontSize: ".8em" }}>Returns&</span>
               <br />
-              <p style={{ fontWeight: "bold" }}>Orders</p>
+              <span style={{ fontWeight: "bold" }}>Orders</span>
             </>
           </Link>
           <Link to="/" className="navbar-linkitem">
             <div className="navbar-cart">
-              <img src="../src/Images/cart_icon.png"></img>
+              <div className="navbar-cart-info">
+                <span className="navbar-cart-img"></span>
+                <span id="cart-amount">0</span>
+              </div>
               <span style={{ fontWeight: "bold", margin: "5px" }}>Cart</span>
             </div>
           </Link>
