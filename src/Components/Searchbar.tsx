@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../Styles/Searchbar.css";
 import DropDown from "./DropDown";
 import { searchbarMenuItems } from "../Pages/Menus/SearchbarMenu";
 
-function Searchbar() {
+interface prop {
+  onSearchFocus?: () => void;
+}
+
+function Searchbar({ onSearchFocus }: prop) {
   const [isfocused, Setisfocused] = useState(false);
   const [isbfocused, Setisbfocused] = useState(false);
+
+  useEffect(() => {
+    if (onSearchFocus) {
+      onSearchFocus();
+    }
+  }, [isfocused, onSearchFocus]);
 
   const setborderonfocus = () => {
     Setisfocused(true);

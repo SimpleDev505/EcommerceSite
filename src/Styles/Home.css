@@ -1,4 +1,12 @@
-.home-display {
-    height: 50em;
-    border: none;
+* {
+    box-sizing: border-box;
+}
+
+.dark-overlay {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .3);
 }

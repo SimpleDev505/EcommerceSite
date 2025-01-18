@@ -3,7 +3,8 @@
     width: 100%;
     background-color: #0f1111;
     height: 2.5em;
-    justify-content: center;
+    padding: 0;
+    margin: auto;
 
 }
 
@@ -22,14 +23,9 @@
 
 .searchbar-container {
     display: flex;
-    width: fit-content;
-    margin: auto;
-    height: 100%;
-    width: 60%;
+    width: 100%;
     padding: 0;
     margin: 0;
-
-
 }
 
 .focus-border {
