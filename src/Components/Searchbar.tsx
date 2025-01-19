@@ -5,17 +5,22 @@ import { searchbarMenuItems } from "../Pages/Menus/SearchbarMenu";
 
 interface prop {
   onSearchFocus?: () => void;
+  onSearchFoucsLost?: () => void;
 }
 
-function Searchbar({ onSearchFocus }: prop) {
+function Searchbar({ onSearchFocus, onSearchFoucsLost }: prop) {
   const [isfocused, Setisfocused] = useState(false);
   const [isbfocused, Setisbfocused] = useState(false);
 
   useEffect(() => {
-    if (onSearchFocus) {
-      onSearchFocus();
+    if (onSearchFocus && onSearchFoucsLost) {
+      if (isfocused == true) {
+        onSearchFocus();
+      } else {
+        onSearchFoucsLost();
+      }
     }
-  }, [isfocused, onSearchFocus]);
+  }, [isfocused]);
 
   const setborderonfocus = () => {
     Setisfocused(true);

@@ -5,9 +5,16 @@ import { useEffect, useState } from "react";
 
 interface prop {
   onsearchbarfocus?: () => void;
+  onsearchbarfoucslost?: () => void;
+
+  opensidemenu?: () => void;
 }
 
-function Navbar({ onsearchbarfocus }: prop) {
+function Navbar({
+  onsearchbarfocus,
+  onsearchbarfoucslost,
+  opensidemenu,
+}: prop) {
   const [scrolled, setscroll] = useState(false);
 
   const onscrollnavbar = () => {
@@ -42,7 +49,14 @@ function Navbar({ onsearchbarfocus }: prop) {
               </div>
             </Link>
             <div className="navbar-location">
-              <div style={{ fontSize: "12px", color: "#CCCCC1" }}>
+              <div
+                style={{
+                  fontFamily: "sans-serif",
+                  fontSize: "12px",
+                  color: "#CCCCC1",
+                  marginLeft: "12px",
+                }}
+              >
                 Deliver To Chennai 600088
               </div>
               <span>
@@ -50,7 +64,10 @@ function Navbar({ onsearchbarfocus }: prop) {
                 UpdateLocation
               </span>
             </div>
-            <Searchbar onSearchFocus={onsearchbarfocus}></Searchbar>
+            <Searchbar
+              onSearchFocus={onsearchbarfocus}
+              onSearchFoucsLost={onsearchbarfoucslost}
+            ></Searchbar>
             <div className="navbar-lang">
               <button></button>
               <span>EN</span>
@@ -61,9 +78,16 @@ function Navbar({ onsearchbarfocus }: prop) {
               style={{ textDecoration: "none" }}
             >
               <>
-                <span style={{ fontSize: ".8em" }}>SignIn&</span>
-                <br />
-                <span style={{ fontWeight: "bold" }}>Accounts</span>
+                <p
+                  style={{
+                    color: "white",
+                    fontSize: ".75em",
+                    fontFamily: "sans-serif",
+                  }}
+                >
+                  Hello,SignIn&
+                </p>
+                <span>Accounts</span>
               </>
             </Link>
             <Link
@@ -72,9 +96,16 @@ function Navbar({ onsearchbarfocus }: prop) {
               style={{ textDecoration: "none" }}
             >
               <>
-                <span style={{ fontSize: ".8em" }}>Returns&</span>
-                <br />
-                <span style={{ fontWeight: "bold" }}>Orders</span>
+                <p
+                  style={{
+                    color: "white",
+                    fontSize: ".75em",
+                    fontFamily: "sans-serif",
+                  }}
+                >
+                  Returns
+                </p>
+                <span>&Orders</span>
               </>
             </Link>
             <Link
@@ -103,7 +134,7 @@ function Navbar({ onsearchbarfocus }: prop) {
         {/* Nav Banner */}
         <div className="banner">
           <ul className="banner-list">
-            <li>
+            <li onClick={opensidemenu}>
               <span className="banner-menuicon"></span>
               <span>
                 <button>All</button>

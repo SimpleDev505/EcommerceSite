@@ -143,7 +143,7 @@
 }
 
 .banner-list button {
-    width: 3em;
+    width: 1em;
     background: transparent;
     border: none;
     color: white;
@@ -164,6 +164,8 @@
     align-items: center;
     padding: 0;
     margin: 0;
+    margin-left: 1em;
+    padding-right: 1em;
 }
 
 .banner-menuicon {
@@ -175,6 +177,7 @@
     background-size: contain;
     filter: invert();
 }
+
 
 .banner-list li:hover {
     outline: 2px solid white;
