@@ -16,6 +16,7 @@ function Navbar({
   opensidemenu,
 }: prop) {
   const [scrolled, setscroll] = useState(false);
+  const [mobiledevice, setmobiledevice] = useState(true);
 
   const onscrollnavbar = () => {
     const offset = window.scrollY;
@@ -28,6 +29,20 @@ function Navbar({
 
   useEffect(() => {
     window.addEventListener("scroll", onscrollnavbar);
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 480) {
+        setmobiledevice(true);
+      } else {
+        setmobiledevice(false);
+      }
+    });
+    window.addEventListener("load", () => {
+      if (window.innerWidth < 480) {
+        setmobiledevice(true);
+      } else {
+        setmobiledevice(false);
+      }
+    });
   });
   return (
     <>
@@ -67,47 +82,52 @@ function Navbar({
             <Searchbar
               onSearchFocus={onsearchbarfocus}
               onSearchFoucsLost={onsearchbarfoucslost}
+              mobiledevice={mobiledevice}
             ></Searchbar>
             <div className="navbar-lang">
               <button></button>
               <span>EN</span>
             </div>
-            <Link
-              to="/"
-              className="navbar-linkitem"
-              style={{ textDecoration: "none" }}
-            >
-              <>
-                <p
-                  style={{
-                    color: "white",
-                    fontSize: ".75em",
-                    fontFamily: "sans-serif",
-                  }}
-                >
-                  Hello,SignIn&
-                </p>
-                <span>Accounts</span>
-              </>
-            </Link>
-            <Link
-              to="/"
-              className="navbar-linkitem"
-              style={{ textDecoration: "none" }}
-            >
-              <>
-                <p
-                  style={{
-                    color: "white",
-                    fontSize: ".75em",
-                    fontFamily: "sans-serif",
-                  }}
-                >
-                  Returns
-                </p>
-                <span>&Orders</span>
-              </>
-            </Link>
+            {mobiledevice ? null : (
+              <Link
+                to="/"
+                className="navbar-linkitem"
+                style={{ textDecoration: "none" }}
+              >
+                <>
+                  <p
+                    style={{
+                      color: "white",
+                      fontSize: ".75em",
+                      fontFamily: "sans-serif",
+                    }}
+                  >
+                    Hello,SignIn&
+                  </p>
+                  <span>Accounts</span>
+                </>
+              </Link>
+            )}
+            {mobiledevice ? null : (
+              <Link
+                to="/"
+                className="navbar-linkitem"
+                style={{ textDecoration: "none" }}
+              >
+                <>
+                  <p
+                    style={{
+                      color: "white",
+                      fontSize: ".75em",
+                      fontFamily: "sans-serif",
+                    }}
+                  >
+                    Returns
+                  </p>
+                  <span>&Orders</span>
+                </>
+              </Link>
+            )}
             <Link
               to="/"
               className="navbar-linkitem"

@@ -1,19 +1,33 @@
-* {
-    box-sizing: border-box;
-}
-
-.dark-overlay {
+.homedark-overlay {
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, .3);
+    z-index: 8;
+    background-color: rgba(0, 0, 0, .7);
 }
 
 .offers-bg {
-    position: absolute;
+    display: flex;
+    position: relative;
     width: 100%;
-    height: 100%;
-    background-color: aquamarine;
+    height: 25em;
+    background: url('../Images/Deals/deal1.jpg') no-repeat;
+    background-size: cover;
+}
+
+.offer-left {
+    width: 100%;
+    height: 5em;
+    background: url('../Images/expand_icon.png') no-repeat;
+    background-size: contain;
+
+
+}
+
+.offer-right {
+    width: 100%;
+    height: 5em;
+    background: url('../Images/expand_icon.png') no-repeat;
+    background-size: contain;
 }

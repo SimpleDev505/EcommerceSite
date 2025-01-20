@@ -6,9 +6,10 @@ import { searchbarMenuItems } from "../Pages/Menus/SearchbarMenu";
 interface prop {
   onSearchFocus?: () => void;
   onSearchFoucsLost?: () => void;
+  mobiledevice?: boolean;
 }
 
-function Searchbar({ onSearchFocus, onSearchFoucsLost }: prop) {
+function Searchbar({ mobiledevice, onSearchFocus, onSearchFoucsLost }: prop) {
   const [isfocused, Setisfocused] = useState(false);
   const [isbfocused, Setisbfocused] = useState(false);
 
@@ -45,7 +46,9 @@ function Searchbar({ onSearchFocus, onSearchFoucsLost }: prop) {
               : "searchbar-container"
           }
         >
-          <DropDown heading="All" items={searchbarMenuItems}></DropDown>
+          {mobiledevice ? null : (
+            <DropDown heading="All" items={searchbarMenuItems}></DropDown>
+          )}
           <input
             type="text"
             placeholder="Search.."
