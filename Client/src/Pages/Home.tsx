@@ -39,6 +39,41 @@ function Home() {
         <div className="offer-left"></div>
         <div className="offer-right"></div>
       </div>
+      <div className="offers-grid">
+        <div className="offers">
+          <div className="offer-bg">
+            <p>Revamp Your Home</p>
+            <div className="offer-collection">
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+            </div>
+          </div>
+        </div>
+        <div className="offers">
+          <div className="offer-bg">
+            <p>Starting At 499 | Headphones</p>
+            <div className="offer-collection">
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+            </div>
+          </div>
+        </div>
+        <div className="offers">
+          <div className="offer-bg">
+            <p>Appliances For Your Home</p>
+            <div className="offer-collection">
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+              <div className="offer-img"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

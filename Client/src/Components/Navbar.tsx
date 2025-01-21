@@ -20,11 +20,13 @@ function Navbar({
 
   const onscrollnavbar = () => {
     const offset = window.scrollY;
-    if (offset > 10) {
+    if (offset > 2) {
       setscroll(true);
     } else {
       setscroll(false);
     }
+
+    console.log(scrolled);
   };
 
   useEffect(() => {
@@ -46,20 +48,16 @@ function Navbar({
   });
   return (
     <>
-      <div className="navbar-pos">
-        <nav
-          className={
-            scrolled ? "navbar-container scrolled" : "navbar-container"
-          }
-        >
+      <div className={scrolled ? "navbar-pos scrolled" : "navbar-pos"}>
+        <nav className="navbar-container">
           <div className="navbar-links">
             <Link
               to="/"
               className="navbar-linkitem"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", maxWidth: "5em" }}
             >
               <div className="navbar-logo">
-                <img src="../src/Images/Logo.png" width="50px"></img>
+                <img src="../src/Images/Logo.png"></img>
                 <span>Home</span>
               </div>
             </Link>
@@ -128,56 +126,62 @@ function Navbar({
                 </>
               </Link>
             )}
-            <Link
-              to="/"
-              className="navbar-linkitem"
-              style={{ textDecoration: "none" }}
-            >
-              <div className="navbar-cart">
-                <div className="navbar-cart-info">
-                  <span className="navbar-cart-img"></span>
-                  <span id="cart-amount">0</span>
+            {
+              <Link
+                to="/"
+                className="navbar-linkitem"
+                style={{ textDecoration: "none" }}
+              >
+                <div className="navbar-cart">
+                  <div className="navbar-cart-info">
+                    <span className="navbar-cart-img"></span>
+                    <span id="cart-amount">0</span>
+                  </div>
+                  {mobiledevice ? null : (
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        margin: "auto",
+                        marginRight: "5px",
+                      }}
+                    >
+                      Cart
+                    </span>
+                  )}
                 </div>
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    margin: "auto",
-                    marginRight: "5px",
-                  }}
-                >
-                  Cart
-                </span>
-              </div>
-            </Link>
+              </Link>
+            }
           </div>
         </nav>
         {/* Nav Banner */}
-        <div className="banner">
-          <ul className="banner-list">
-            <li onClick={opensidemenu}>
-              <span className="banner-menuicon"></span>
-              <span>
-                <button>All</button>
-              </span>
-            </li>
-            <li>Fresh</li>
-            <li>MXPlayer</li>
-            <li>Sell</li>
-            <li>BestSellers</li>
-            <li>Today'sDeals</li>
-            <li>Mobiles</li>
-            <li>Electronics</li>
-            <li>Prime</li>
-            <li>CustomerService</li>
-            <li>Home&Kitchen</li>
-            <li>AmazonPay</li>
-            <li>NewReleases</li>
-            <li>Fashion</li>
-            <li>Computers</li>
-            <li>Car&Motorbike</li>
-            <li>Books</li>
-          </ul>
-        </div>
+        {scrolled && mobiledevice ? null : (
+          <div className="banner">
+            <ul className="banner-list">
+              <li onClick={opensidemenu}>
+                <span className="banner-menuicon"></span>
+                <span>
+                  <button>All</button>
+                </span>
+              </li>
+              <li>Fresh</li>
+              <li>MXPlayer</li>
+              <li>Sell</li>
+              <li>BestSellers</li>
+              <li>Today'sDeals</li>
+              <li>Mobiles</li>
+              <li>Electronics</li>
+              <li>Prime</li>
+              <li>CustomerService</li>
+              <li>Home&Kitchen</li>
+              <li>AmazonPay</li>
+              <li>NewReleases</li>
+              <li>Fashion</li>
+              <li>Computers</li>
+              <li>Car&Motorbike</li>
+              <li>Books</li>
+            </ul>
+          </div>
+        )}
       </div>
     </>
   );
