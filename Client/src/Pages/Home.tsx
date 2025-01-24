@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import "../Styles/Home.css";
 import Sidebar from "../Components/Sidebar";
+import TopOffers from "../Components/TopOffers";
 function Home() {
   const [homedarkoverlay, sethomedarkoverlay] = useState(false);
   const [sidemenu, setsidemenu] = useState(false);
@@ -35,45 +36,7 @@ function Home() {
         opensidemenu={opensidemenu}
       />
       {homedarkoverlay ? <div className="homedark-overlay"></div> : null}
-      <div className="offers-bg">
-        <div className="offer-left"></div>
-        <div className="offer-right"></div>
-      </div>
-      <div className="offers-grid">
-        <div className="offers">
-          <div className="offer-bg">
-            <p>Revamp Your Home</p>
-            <div className="offer-collection">
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-            </div>
-          </div>
-        </div>
-        <div className="offers">
-          <div className="offer-bg">
-            <p>Starting At 499 | Headphones</p>
-            <div className="offer-collection">
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-            </div>
-          </div>
-        </div>
-        <div className="offers">
-          <div className="offer-bg">
-            <p>Appliances For Your Home</p>
-            <div className="offer-collection">
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TopOffers />
     </>
   );
 }

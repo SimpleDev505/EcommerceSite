@@ -18,6 +18,9 @@ function Navbar({
   const [scrolled, setscroll] = useState(false);
   const [mobiledevice, setmobiledevice] = useState(true);
 
+  useEffect(() => {
+    console.log(mobiledevice);
+  }, []);
   const onscrollnavbar = () => {
     const offset = window.scrollY;
     if (offset > 2) {
