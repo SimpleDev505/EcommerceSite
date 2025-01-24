@@ -21,13 +21,21 @@ function Navbar({
   useEffect(() => {
     console.log(mobiledevice);
   }, []);
-  const onscrollnavbar = () => {
-    const offset = window.scrollY;
-    if (offset > 2) {
-      setscroll(true);
-    } else {
+  window.onscroll = function () {
+    if (window.scrollY === 0) {
       setscroll(false);
+    } else {
+      setscroll(true);
     }
+  };
+
+  const onscrollnavbar = () => {
+    // const offset = window.onscroll;
+    // if (window.onscroll) {
+    //   setscroll(true);
+    // } else {
+    //   setscroll(false);
+    // }
 
     console.log(scrolled);
   };
@@ -35,14 +43,14 @@ function Navbar({
   useEffect(() => {
     window.addEventListener("scroll", onscrollnavbar);
     window.addEventListener("resize", () => {
-      if (window.innerWidth < 480) {
+      if (window.innerWidth < 2) {
         setmobiledevice(true);
       } else {
         setmobiledevice(false);
       }
     });
     window.addEventListener("load", () => {
-      if (window.innerWidth < 480) {
+      if (window.innerWidth < 2) {
         setmobiledevice(true);
       } else {
         setmobiledevice(false);
@@ -157,7 +165,7 @@ function Navbar({
           </div>
         </nav>
         {/* Nav Banner */}
-        {scrolled && mobiledevice ? null : (
+        {scrolled || mobiledevice ? null : (
           <div className="banner">
             <ul className="banner-list">
               <li onClick={opensidemenu}>

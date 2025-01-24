@@ -2,10 +2,17 @@ import { useEffect, useState } from "react";
 import "../Styles/TopOffers.css";
 import axios from "axios";
 
+interface newoffers_schema {
+  _id: string;
+  index: Number;
+  imgs: string[];
+}
+
 function TopOffers() {
-  const [newoffers, Setnewoffers] = useState<any[]>([]);
+  //New Offers
+  const [newoffers, Setnewoffers] = useState<newoffers_schema[]>([]);
   useEffect(() => {
-    const tryfetch_newoffer = async () => {
+    const tryfetch_newoffers = async () => {
       try {
         const fetch_newoffers = await axios.get(
           "http://localhost:8000/api/getnewoffers"
@@ -16,7 +23,7 @@ function TopOffers() {
         console.log(error);
       }
     };
-    tryfetch_newoffer();
+    tryfetch_newoffers();
   }, []);
 
   return (
@@ -30,15 +37,22 @@ function TopOffers() {
           <div className="offer-bg">
             <p>Revamp Your Home</p>
             <div className="offer-collection">
-              <ul>
-                {newoffers.map((offer) => (
-                  <li key={offer.index}>{offer.offerimgs}</li>
-                ))}
-              </ul>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
+              {newoffers.map((offer) =>
+                offer.imgs.map((img, imgIndex) => (
+                  <div
+                    key={`${imgIndex}`}
+                    className="offer-img"
+                    style={{
+                      backgroundImage: `url('${img.trim()}')`,
+                    }}
+                  ></div>
+                ))
+              )}
+              <span
+                style={{ marginLeft: "2.5em", color: "blue", fontSize: ".9em" }}
+              >
+                Explore All
+              </span>
             </div>
           </div>
         </div>
@@ -46,10 +60,22 @@ function TopOffers() {
           <div className="offer-bg">
             <p>Starting At 499 | Headphones</p>
             <div className="offer-collection">
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
+              {newoffers.map((offer) =>
+                offer.imgs.map((img, imgIndex) => (
+                  <div
+                    key={`${imgIndex}`}
+                    className="offer-img"
+                    style={{
+                      backgroundImage: `url('${img.trim()}')`,
+                    }}
+                  ></div>
+                ))
+              )}
+              <span
+                style={{ marginLeft: "2.5em", color: "blue", fontSize: ".9em" }}
+              >
+                Explore All
+              </span>
             </div>
           </div>
         </div>
@@ -57,14 +83,143 @@ function TopOffers() {
           <div className="offer-bg">
             <p>Appliances For Your Home</p>
             <div className="offer-collection">
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
-              <div className="offer-img"></div>
+              {newoffers.map((offer) =>
+                offer.imgs.map((img, imgIndex) => (
+                  <div
+                    key={`${imgIndex}`}
+                    className="offer-img"
+                    style={{
+                      backgroundImage: `url('${img.trim()}')`,
+                    }}
+                  ></div>
+                ))
+              )}
+              <span
+                style={{ marginLeft: "2.5em", color: "blue", fontSize: ".9em" }}
+              >
+                Explore All
+              </span>
             </div>
           </div>
         </div>
+        <div className="offers">
+          <div className="offer-bg">
+            <p>Appliances For Your Home</p>
+            <div className="offer-collection">
+              {newoffers.map((offer) =>
+                offer.imgs.map((img, imgIndex) => (
+                  <div
+                    key={`${imgIndex}`}
+                    className="offer-img"
+                    style={{
+                      backgroundImage: `url('${img.trim()}')`,
+                    }}
+                  ></div>
+                ))
+              )}
+              <span
+                style={{ marginLeft: "2.5em", color: "blue", fontSize: ".9em" }}
+              >
+                Explore All
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="offers">
+          <div className="offer-bg">
+            <p>Appliances For Your Home</p>
+            <div className="offer-collection">
+              {newoffers.map((offer) =>
+                offer.imgs.map((img, imgIndex) => (
+                  <div
+                    key={`${imgIndex}`}
+                    className="offer-img"
+                    style={{
+                      backgroundImage: `url('${img.trim()}')`,
+                    }}
+                  ></div>
+                ))
+              )}
+              <span
+                style={{ marginLeft: "2.5em", color: "blue", fontSize: ".9em" }}
+              >
+                Explore All
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="offers">
+          <div className="offer-bg">
+            <p>Appliances For Your Home</p>
+            <div className="offer-collection">
+              {newoffers.map((offer) =>
+                offer.imgs.map((img, imgIndex) => (
+                  <div
+                    key={`${imgIndex}`}
+                    className="offer-img"
+                    style={{
+                      backgroundImage: `url('${img.trim()}')`,
+                    }}
+                  ></div>
+                ))
+              )}
+              <span
+                style={{ marginLeft: "2.5em", color: "blue", fontSize: ".9em" }}
+              >
+                Explore All
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="offerSlide">
+          {newoffers.map((offer) =>
+            offer.imgs.map((img, imgIndex) => (
+              <div
+                key={`${imgIndex}`}
+                className="offerslide-img"
+                style={{
+                  backgroundImage: `url('${img.trim()}')`,
+                }}
+              ></div>
+            ))
+          )}
+          {newoffers.map((offer) =>
+            offer.imgs.map((img, imgIndex) => (
+              <div
+                key={`${imgIndex}`}
+                className="offerslide-img"
+                style={{
+                  backgroundImage: `url('${img.trim()}')`,
+                }}
+              ></div>
+            ))
+          )}
+          {newoffers.map((offer) =>
+            offer.imgs.map((img, imgIndex) => (
+              <div
+                key={`${imgIndex}`}
+                className="offerslide-img"
+                style={{
+                  backgroundImage: `url('${img.trim()}')`,
+                }}
+              ></div>
+            ))
+          )}
+          {newoffers.map((offer) =>
+            offer.imgs.map((img, imgIndex) => (
+              <div
+                key={`${imgIndex}`}
+                className="offerslide-img"
+                style={{
+                  backgroundImage: `url('${img.trim()}')`,
+                }}
+              ></div>
+            ))
+          )}
+        </div>
       </div>
+
+      {/* offers side */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 @media screen and (min-width:481px) {
     .offers-bg {
         display: flex;
-        position: relative;
+        position: absolute;
         margin: auto;
         width: 100%;
         height: 25em;
@@ -16,31 +16,39 @@
         grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(64px, 100%/2)), 1fr));
         width: 100%;
         height: fit-content;
-        padding: 2em;
+        padding-top: 1em;
+        padding-bottom: .3em;
         margin: auto;
-        row-gap: 5em;
+        row-gap: 1em;
     }
 
     .offer-img {
         position: relative;
-        background: url('../Images/Logo.png') no-repeat;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
         background-size: contain;
-        width: 64px;
-        height: 64px;
-        max-height: 64px;
-        filter: invert();
+        background-position: center center;
+        padding-top: 66.64%;
         justify-self: center;
     }
 
     .offers-grid {
         display: flex;
-        position: fixed;
+        position: relative;
+        flex-wrap: wrap;
         width: 100%;
         height: 100%;
         padding: 2em;
         top: 300px;
         gap: 5em;
         margin: auto;
+    }
+
+    .offers {
+        flex: 1 1 calc(33.33% - 5em);
+        width: 100%;
+        height: 100%;
     }
 
     .offers p {
@@ -57,13 +65,50 @@
         width: 100%;
         background: white;
         height: 100%;
-        padding: 1em;
+        border-radius: .3em;
+        -webkit-box-shadow: -1px 7px 28px -12px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 7px 28px -12px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 7px 28px -12px rgba(0, 0, 0, 0.75);
     }
 
-    .offers {
-        width: 100%;
-        height: 100%;
+    .offer-bg:hover {
+        background: rgb(241, 241, 241);
     }
+
+    /* offerSlide */
+
+    .offerSlide {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        width: 100%;
+        height: fit-content;
+        background: rgb(255, 255, 255);
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1em;
+
+        border-radius: .5em;
+
+        -webkit-box-shadow: -1px 7px 28px -12px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 7px 28px -12px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 7px 28px -12px rgba(0, 0, 0, 0.75);
+    }
+
+    .offerslide-img {
+        flex: 0 0 10%;
+        width: 8em;
+        height: 8em;
+        margin-left: 1em;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+    }
+
 }
 
 @media screen and (max-width:480px) {
@@ -128,6 +173,17 @@
     .offers {
         width: max-content;
         height: fit-content;
+    }
+
+    .offerSlide {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        width: 100%;
+        height: 5em;
     }
 
 }

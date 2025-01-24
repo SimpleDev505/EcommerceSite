@@ -1,8 +1,9 @@
 import express from "express";
 import connectDB from "./Data/db.js";
 import cors from "cors";
-import offersFolder from "./Data/offers.js";
 import dotenv from "dotenv";
+//Models
+import offersmodel from "./models/offers.js";
 dotenv.config({ path: "./db.env" });
 const app = express();
 app.use(express.json());
@@ -15,8 +16,15 @@ app.listen(8000, () => {
 });
 app.get("/api/getnewoffers", async (req, res) => {
     try {
-        const offerimg = await offersFolder.find({});
-        res.status(200).json(offerimg);
+        const getnewoffers = await offersmodel.find({});
+        res.status(200).json(getnewoffers);
+    }
+    catch (error) {
+        res.status(500).json(console.log(error));
+    }
+});
+app.get("/api/signin", async (req, res) => {
+    try {
     }
     catch (error) {
         res.status(500).json(console.log(error));
