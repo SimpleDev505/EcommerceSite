@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import "../Styles/Navbar.css";
 import Searchbar from "./Searchbar";
 import { useEffect, useState } from "react";
@@ -18,9 +18,6 @@ function Navbar({
   const [scrolled, setscroll] = useState(false);
   const [mobiledevice, setmobiledevice] = useState(true);
 
-  useEffect(() => {
-    console.log(mobiledevice);
-  }, []);
   window.onscroll = function () {
     if (window.scrollY === 0) {
       setscroll(false);
@@ -29,34 +26,11 @@ function Navbar({
     }
   };
 
-  const onscrollnavbar = () => {
-    // const offset = window.onscroll;
-    // if (window.onscroll) {
-    //   setscroll(true);
-    // } else {
-    //   setscroll(false);
-    // }
-
-    console.log(scrolled);
-  };
-
+  let loc = useLocation();
   useEffect(() => {
-    window.addEventListener("scroll", onscrollnavbar);
-    window.addEventListener("resize", () => {
-      if (window.innerWidth < 2) {
-        setmobiledevice(true);
-      } else {
-        setmobiledevice(false);
-      }
-    });
-    window.addEventListener("load", () => {
-      if (window.innerWidth < 2) {
-        setmobiledevice(true);
-      } else {
-        setmobiledevice(false);
-      }
-    });
-  });
+    setmobiledevice(window.innerWidth < 480);
+  }, [loc]);
+
   return (
     <>
       <div className={scrolled ? "navbar-pos scrolled" : "navbar-pos"}>
@@ -99,7 +73,7 @@ function Navbar({
             </div>
             {mobiledevice ? null : (
               <Link
-                to="/"
+                to="/signin"
                 className="navbar-linkitem"
                 style={{ textDecoration: "none" }}
               >

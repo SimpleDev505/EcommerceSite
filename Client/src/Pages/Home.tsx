@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import "../Styles/Home.css";
 import Sidebar from "../Components/Sidebar";
 import TopOffers from "../Components/TopOffers";
+import Footer from "../Components/Footer";
 function Home() {
   const [homedarkoverlay, sethomedarkoverlay] = useState(false);
   const [sidemenu, setsidemenu] = useState(false);
@@ -37,6 +38,7 @@ function Home() {
       />
       {homedarkoverlay ? <div className="homedark-overlay"></div> : null}
       <TopOffers />
+      <Footer />
     </>
   );
 }

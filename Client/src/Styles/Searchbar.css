@@ -94,6 +94,7 @@
 .focus-border {
     outline: 3px solid #dd9940;
     border-radius: .3em;
+    outline-offset: .1em;
 }
 
 .searchbar-button:hover {
