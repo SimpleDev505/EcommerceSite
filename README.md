@@ -2,15 +2,6 @@
 
 A fully responsive **Amazon clone** built with **React** and **TypeScript**, featuring custom enhancements and a modern UI.
 
-## 🚀 Features
-- 🛍️ **Product Listings & Search**
-- 🛒 **Shopping Cart & Checkout**
-- 🔐 **User Authentication (Login/Signup)**
-- 🌙 **Dark Mode Support**
-- ⚡ **Optimized Performance**
-- 📱 **Mobile-Responsive Design**
-- 📦 **Dynamic API Integration**
-
 ## 🛠 Tech Stack
 
 ### Frontend
