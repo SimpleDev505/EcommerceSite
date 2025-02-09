@@ -1,4 +1,4 @@
-# 🛒 Amazon Clone with Custom Features
+# 🛒 Amazon Clone
 
 A fully responsive **Amazon clone** built with **React** and **TypeScript**, featuring custom enhancements and a modern UI.
 
