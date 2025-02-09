@@ -2,6 +2,12 @@
 
 A fully responsive **Amazon clone** built with **React** and **TypeScript**, featuring custom enhancements and a modern UI.
 
+
+https://github.com/user-attachments/assets/da4d0998-7c6e-4648-8cb7-a0ddc8065968
+
+
+
+
 ## 🛠 Tech Stack
 
 ### Frontend
