@@ -16,5 +16,4 @@ https://github.com/user-attachments/assets/da4d0998-7c6e-4648-8cb7-a0ddc8065968
 
 ### Backend
 ![Node.js](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
